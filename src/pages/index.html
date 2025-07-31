@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Öğrenci Koçluğu Takip</title>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="/src/js/script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Öğrenci Koçluğu Takip Formu</h1>
+
+    <form id="studentForm" class="bg-white p-6 rounded shadow-md">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-medium">Öğrenci Adı</label>
+          <input type="text" name="isim" class="w-full border px-3 py-2 rounded" required />
+        </div>
+        <div>
+          <label class="block font-medium">Okul Adı</label>
+          <input type="text" name="okul" class="w-full border px-3 py-2 rounded" required />
+        </div>
+        <div>
+          <label class="block font-medium">Okul Düzeyi</label>
+          <select name="okul_duzeyi" class="w-full border px-3 py-2 rounded">
+            <option>İlkokul</option>
+            <option>Ortaokul</option>
+            <option>Lise</option>
+          </select>
+        </div>
+        <div>
+          <label class="block font-medium">Sınıf Düzeyi</label>
+          <input type="text" name="sinif" class="w-full border px-3 py-2 rounded" placeholder="Örn: 8. sınıf" />
+        </div>
+        <div>
+          <label class="block font-medium">Sınav Türü</label>
+          <select name="sinav" class="w-full border px-3 py-2 rounded">
+            <option>LGS</option>
+            <option>YKS</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="mt-6 bg-blue-600 text-white px-4 py-2 rounded">Kaydet</button>
+    </form>
+
+    <div class="mt-10">
+      <h2 class="text-xl font-semibold mb-4">Kayıtlı Öğrenciler</h2>
+      <div id="studentList" class="space-y-2"></div>
+    </div>
+  </div>
+</body>
+</html>
